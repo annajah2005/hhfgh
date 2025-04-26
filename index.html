@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punkstraks NFT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    :root {
+      --primary-color: #00D76F;
+      --dark-bg: #0d0d0d;
+      --light-bg: #101010;
+      --text-color: #e0ffe8;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background: var(--dark-bg);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border: 2px solid var(--primary-color);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .description {
+      margin: 20px 0;
+      font-size: 0.8rem;
+      color: var(--primary-color);
+    }
+
+    .nft-slider {
+      overflow: hidden;
+      margin: 40px 0;
+      background: var(--light-bg);
+      padding: 10px 0;
+      border-top: 1px solid var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
+    }
+
+    .slider-track {
+      display: flex;
+      width: calc(250px * 14);
+      animation: scroll 40s linear infinite;
+    }
+
+    .nft-item {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      flex-shrink: 0;
+      border: 1px solid var(--primary-color);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--dark-bg);
+    }
+
+    .nft-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-250px * 7)); }
+    }
+
+    .checker {
+      margin-top: 50px;
+    }
+
+    input, button {
+      font-family: 'Press Start 2P', cursive;
+      padding: 10px;
+      margin: 10px 0;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid var(--primary-color);
+      background: var(--light-bg);
+      color: var(--text-color);
+      border-radius: 5px;
+    }
+
+    button {
+      cursor: pointer;
+      background: var(--primary-color);
+      color: black;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00b35c;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 0.8rem;
+      min-height: 40px;
+    }
+
+    .social {
+      margin-top: 50px;
+    }
+
+    .social a img {
+      width: 40px;
+      margin: 0 10px;
+      filter: drop-shadow(0 0 5px var(--primary-color));
+    }
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      font-size: 0.6rem;
+      color: var(--primary-color);
+      border-top: 1px solid var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PUNKSTRAKS NFT</h1>
+      <div class="logo">
+        <img src="nft/logo.png" alt="Logo">
+      </div>
+    </header>
+
+    <section class="description">
+      <p>6666 PunkStract, powered by @abstractchain</p>
+    </section>
+
+    <section class="nft-slider">
+      <div class="slider-track">
+        <!-- NFT images -->
+        <div class="nft-item"><img src="nft/nft1.png" alt="NFT 1"></div>
+        <div class="nft-item"><img src="nft/nft2.png" alt="NFT 2"></div>
+        <div class="nft-item"><img src="nft/nft3.png" alt="NFT 3"></div>
+        <div class="nft-item"><img src="nft/nft4.png" alt="NFT 4"></div>
+        <div class="nft-item"><img src="nft/nft5.png" alt="NFT 5"></div>
+        <div class="nft-item"><img src="nft/nft6.png" alt="NFT 6"></div>
+        <div class="nft-item"><img src="nft/nft7.png" alt="NFT 7"></div>
+        <div class="nft-item"><img src="nft/nft1.png" alt="NFT 1"></div>
+        <div class="nft-item"><img src="nft/nft2.png" alt="NFT 2"></div>
+        <div class="nft-item"><img src="nft/nft3.png" alt="NFT 3"></div>
+        <div class="nft-item"><img src="nft/nft4.png" alt="NFT 4"></div>
+        <div class="nft-item"><img src="nft/nft5.png" alt="NFT 5"></div>
+        <div class="nft-item"><img src="nft/nft6.png" alt="NFT 6"></div>
+        <div class="nft-item"><img src="nft/nft7.png" alt="NFT 7"></div>
+      </div>
+    </section>
+
+    <section class="checker">
+      <h2>Eligibility Checker</h2>
+      <input type="text" id="walletAddress" placeholder="Enter Wallet Address">
+      <button onclick="checkEligibility()">Check</button>
+      <div class="result" id="result"></div>
+    </section>
+
+    <section class="social">
+      <a href="https://twitter.com/yourtwitter" target="_blank">
+        <img src="nft/twitter.png" alt="Twitter">
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2025 Punkstraks. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR4VlSJFwa2CEXTgbs0_vJMrrIDgC4l3YbuiqhPevI8Bib5oP7MIxCGE7MNxNdJR8E1rm3lUH88wsWl/pub?output=csv';
+    let eligibleWallets = [];
+
+    async function fetchEligibleWallets() {
+      try {
+        const response = await fetch(sheetURL);
+        const csvText = await response.text();
+        const lines = csvText.split('\n');
+        eligibleWallets = lines.map(line => line.trim().toLowerCase());
+        console.log('Wallets Loaded:', eligibleWallets.length);
+      } catch (error) {
+        console.error('Error fetching wallets:', error);
+      }
+    }
+
+    fetchEligibleWallets();
+
+    function checkEligibility() {
+      const walletInput = document.getElementById('walletAddress').value.trim().toLowerCase();
+      const resultElement = document.getElementById('result');
+
+      if (!walletInput) {
+        resultElement.textContent = "Please enter a wallet address.";
+        resultElement.style.color = "red";
+        return;
+      }
+
+      if (eligibleWallets.includes(walletInput)) {
+        resultElement.textContent = "✅ Wallet is eligible!";
+        resultElement.style.color = "var(--primary-color)";
+      } else {
+        resultElement.textContent = "❌ Wallet is NOT eligible.";
+        resultElement.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
